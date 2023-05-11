@@ -43,7 +43,7 @@ function getLoggedUsers(){
 	</header>
 	<nav>
 		<ul>
-			<li><a href="#">Dashboard</a></li>
+			<li><a href="./apps/index.html">Apps</a></li>
 			<li><a href="#">Settings</a></li>
 			<li><a href="#">Logout</a></li>
 		</ul>

@@ -7,11 +7,11 @@
     font-family: "Play";
 
     --dark: #1a181b;
-    --primary: #046eb5;
+    --primary: #1434A4;
     /* --card: #fff;
     --navbar: #f8f9fa; */
     --bg: #010101;
-    --card: #2c2c2c;
+    --card: #121212;
     --card-fg: white;
     --navbar: var(--card);
     --navlinks: white;
