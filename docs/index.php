@@ -16,6 +16,14 @@ function getRam(){
 	
     return number_format((float)$memory_usage, 2, '.', '');
 }
+
+function getUsedSpace(){
+	$df = disk_free_space("/");
+	$ds = disk_total_space("/");
+	$du = $ds - $df;
+	$used_space_percentage = ($du / $ds)*100;
+	return number_format((float)$used_space_percentage, 2, '.', '');
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +63,7 @@ function getRam(){
 		</div>
 		<div class="card">
 			<h2>Disk Usage</h2>
-			<p>40%</p>
+			<p><?php echo getUsedSpace() ?>%</p>
 		</div>
 		<div class="card">
 			<h2>Network Usage</h2>
