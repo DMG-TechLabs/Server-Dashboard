@@ -1,3 +1,23 @@
+<?php 
+function getCpu(){
+	$load = sys_getloadavg();
+	return number_format((float)$load[0], 2, '.', '');
+}
+
+function getRam(){
+	$free = shell_exec('free');
+    $free = (string)trim($free);
+    $free_arr = explode("\n", $free);
+    $mem = explode(" ", $free_arr[1]);
+    $mem = array_filter($mem);
+    $mem = array_merge($mem);
+    $memory_usage = $mem[2]/$mem[1]*100;
+
+	
+    return number_format((float)$memory_usage, 2, '.', '');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +46,12 @@
 		</div>
 		<div class="card">
 			<h2>CPU Usage</h2>
-			<p>50%</p>
+			<p><?php echo getCpu() ?>%</p>
+			
 		</div>
 		<div class="card">
 			<h2>Memory Usage</h2>
-			<p>75%</p>
+			<p><?php echo getRam() ?>%</p>
 		</div>
 		<div class="card">
 			<h2>Disk Usage</h2>
