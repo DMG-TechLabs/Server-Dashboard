@@ -1,0 +1,79 @@
+﻿@font-face {
+    font-family: "Play";
+    src: url("./static/Play-Regular.ttf");
+}
+
+*{
+    font-family: "Play";
+
+    --dark: #1a181b;
+    --primary: #046eb5;
+    /* --card: #fff;
+    --navbar: #f8f9fa; */
+    --bg: #010101;
+    --card: #2c2c2c;
+    --card-fg: white;
+    --navbar: var(--card);
+    --navlinks: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+}
+
+header {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--navbar);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--navlinks);
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    color: var(--card-fg);
+    background-color: var(--card);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin: 0;
+}
