@@ -24,6 +24,11 @@ function getUsedSpace(){
 	$used_space_percentage = ($du / $ds)*100;
 	return number_format((float)$used_space_percentage, 2, '.', '');
 }
+
+function getLoggedUsers(){
+	return shell_exec('who | wc -l');
+	
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +76,7 @@ function getUsedSpace(){
 		</div>
 		<div class="card">
 			<h2>Users</h2>
-			<p>10</p>
+			<p><?php echo getLoggedUsers() ?></p>
 		</div>
 	</section>
 </body>
