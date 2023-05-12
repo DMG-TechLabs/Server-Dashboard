@@ -54,6 +54,10 @@ require 'php/get_info.php';
 			<h2>Users</h2>
 			<p><?php echo getLoggedUsers() ?></p>
 		</div>
+		<div class="card">
+			<h2>Battery</h2>
+			<p><?php echo getBattery() ?></p>
+		</div>
 	</section>
 </body>
 </html>

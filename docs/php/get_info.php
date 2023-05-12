@@ -33,14 +33,16 @@ function getLoggedUsers(){
 }
 
 function getCpuTemp(){
-    //Package id 0:  +38.0°C  (high = +100.0°C, crit = +100.0°C)
-    // return shell_exec('sensors | grep "Package id 0:  .*\..°C  (high = +100.0°C, crit = +100.0°C)" | grep "+.*\..°C "');
-    // $temp = shell_exec('sensors | grep "Package id 0:  .*\..°C  (high = +100.0°C, crit = +100.0°C)" | grep "+.*\..°C "');
     $temp = shell_exec('sensors -j');
     $jsontemp = json_decode($temp, true);
     $cpu_temp = $jsontemp["coretemp-isa-0000"]["Package id 0"]["temp1_input"] . "°C";
     consollog($cpu_temp);
     return $cpu_temp;
 
+}
+
+function getBattery(){
+    $battery_command = str_replace("Battery 0: ","",shell_exec("acpi -b"));
+    return $battery_command;
 }
 ?>
