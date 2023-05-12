@@ -1,0 +1,12 @@
+.app:hover{
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.hidden{
+    display: none;
+}
